@@ -22,6 +22,7 @@ namespace czechpmdevs\simplehome;
 
 use pocketmine\command\Command;
 use pocketmine\Player;
+use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use czechpmdevs\simplehome\commands\HomeCommand;
@@ -48,6 +49,7 @@ class SimpleHome extends PluginBase {
     private $commands = [];
 
     public function onEnable() {
+        $this->getserver()->getPluginManager()->registerEvents($this, $this);
         self::$instance = $this;
         $this->registerCommands();
         $this->loadData();
