@@ -47,6 +47,7 @@ class SimpleHome extends PluginBase {
     private $commands = [];
 
     public function onEnable() {
+        $this->getserver()->getPluginManager()->registerEvents($this, $this);
         self::$instance = $this;
         $this->registerCommands();
         $this->loadData();
@@ -86,7 +87,7 @@ class SimpleHome extends PluginBase {
      */
     public function getDisplayHomeList(Player $player): string {
         $list = $this->getHomeList($player);
-        $lv = MoneyLevelAPI:::getInstance()->getLv($player->getName());
+        $lv = MoneyLevelAPI:::getInstance()->getlv($player->getName());
         $max_lv = $this->messages["limit"] + ($lv / 100);
 
         if(count($list) == 0) {
@@ -118,7 +119,7 @@ class SimpleHome extends PluginBase {
      * @param Home $home
      */
     public function setPlayerHome(Player $player, Home $home) {
-        $lv = MoneyLevelAPI:::getInstance()->getLv($player->getName());
+        $lv = MoneyLevelAPI:::getInstance()->getlv($player->getName());
         $max_lv = $this->messages["limit"] + ($lv / 100);
         if($max_lv != -1) {
             if(count($this->getHomeList($player)) > $max_lv) {
