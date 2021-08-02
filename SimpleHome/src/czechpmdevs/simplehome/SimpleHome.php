@@ -121,6 +121,10 @@ class SimpleHome extends PluginBase {
                 return;
             }
         }
+        if($player->getlevel()->getName() == $this->messages["ban-world"]){
+            $player->sendMessage(str_replace("%1", $home->getName(), $this->messages["ban-world-message"]));
+            return;
+        }
         $this->homes[$player->getName()][$home->getName()] = [$home->getX(), $home->getY(), $home->getZ(), $home->getLevel()->getName()];
     }
 
