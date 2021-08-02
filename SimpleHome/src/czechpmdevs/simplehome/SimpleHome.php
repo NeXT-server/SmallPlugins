@@ -86,6 +86,8 @@ class SimpleHome extends PluginBase {
      */
     public function getDisplayHomeList(Player $player): string {
         $list = $this->getHomeList($player);
+        $lv = MoneyLevelAPI:::getInstance()->getLv($player->getName());
+        $max_lv = $this->messages["limit"] + ($lv / 100);
 
         if(count($list) == 0) {
             return $this->messages["no-home"];
@@ -94,6 +96,7 @@ class SimpleHome extends PluginBase {
         $msg = $this->messages["home-list"];
         $msg = str_replace("%1", (string)count($list), $msg);
         $msg = str_replace("%2", implode(", ", $list), $msg);
+        $msg = str_replace("%3", $max_lv, $msg);
 
         return $msg;
     }
