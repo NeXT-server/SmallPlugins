@@ -27,7 +27,7 @@ use pocketmine\utils\Config;
 use czechpmdevs\simplehome\commands\HomeCommand;
 use czechpmdevs\simplehome\commands\RemovehomeCommand;
 use czechpmdevs\simplehome\commands\SethomeCommand;
-use mydeacy\moneylevel\services\APIService;
+use mydeacy\moneylevel\services\MoneyLevelAPI;
 
 /**
  * Class SimpleHome
@@ -87,7 +87,7 @@ class SimpleHome extends PluginBase {
      */
     public function getDisplayHomeList(Player $player): string {
         $list = $this->getHomeList($player);
-        $lv = APIService::getInstance()->getLv($player->getName());
+        $lv = MoneyLevelAPI::getInstance()->getLv($player->getName());
         $max_lv = $this->messages["limit"] + ($lv / 100);
 
         if(count($list) == 0) {
@@ -119,7 +119,7 @@ class SimpleHome extends PluginBase {
      * @param Home $home
      */
     public function setPlayerHome(Player $player, Home $home) {
-        $lv = APIService::getInstance()->getLv($player->getName());
+        $lv = MoneyLevelAPI::getInstance()->getLv($player->getName());
         $max_lv = $this->messages["limit"] + ($lv / 100);
         if($max_lv != -1) {
             if(count($this->getHomeList($player)) > $max_lv) {
