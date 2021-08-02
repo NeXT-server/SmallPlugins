@@ -24,6 +24,7 @@ use pocketmine\command\Command;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
+use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 use czechpmdevs\simplehome\commands\HomeCommand;
 use czechpmdevs\simplehome\commands\RemovehomeCommand;
@@ -34,7 +35,7 @@ use mydeacy\moneylevel\services\MoneyLevelAPI;
  * Class SimpleHome
  * @package simplehome
  */
-class SimpleHome extends PluginBase {
+class SimpleHome extends PluginBase implements Listener{
 
     /** @var SimpleHome $instance */
     private static $instance;
