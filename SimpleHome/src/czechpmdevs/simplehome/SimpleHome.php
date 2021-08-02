@@ -47,7 +47,6 @@ class SimpleHome extends PluginBase {
     private $commands = [];
 
     public function onEnable() {
-        $this->getserver()->getPluginManager()->registerEvents($this, $this);
         self::$instance = $this;
         $this->registerCommands();
         $this->loadData();
