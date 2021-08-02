@@ -21,4 +21,5 @@ home-notexists: '§cHome %1 does not exists!'
 home-list: '§bHomes (%1): §7%2'
 no-home: '§cYou have not homes'
 ban-world: 'Adventure'
+ban-world-message: '§cYou can not set home here'
 ...
