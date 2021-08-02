@@ -115,8 +115,10 @@ class SimpleHome extends PluginBase {
      * @param Home $home
      */
     public function setPlayerHome(Player $player, Home $home) {
-        if($this->messages["limit"] != -1) {
-            if(count($this->getHomeList($player)) > $this->messages["limit"]) {
+        $lv = MoneyLevelAPI:::getInstance()->getLv($player->getName());
+        $max_lv = $this->messages["limit"] + ($lv / 100);
+        if($max_lv != -1) {
+            if(count($this->getHomeList($player)) > $max_lv) {
                 $player->sendMessage(str_replace("%1", $home->getName(), $this->messages["sethome-max"]));
                 return;
             }
