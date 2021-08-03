@@ -121,7 +121,7 @@ class SimpleHome extends PluginBase implements Listener{
         $lv = MoneyLevelAPI::getInstance()->getLv($player->getName());
         $max_lv = $this->messages["limit"] + (int)($lv / 100);
         if($max_lv != -1) {
-            if(count($this->getHomeList($player)) > $max_lv) {
+            if(count($this->getHomeList($player)) >= $max_lv) {
                 $msg = $this->messages["sethome-max"];
                 $msg = str_replace("%1", $home->getName(), $msg);
                 $msg = str_replace("%2", (string)$max_lv, $msg);
