@@ -100,7 +100,7 @@ class SimpleHome extends PluginBase implements Listener{
         $msg = $this->messages["home-list"];
         $msg = str_replace("%1", (string)count($list), $msg);
         $msg = str_replace("%2", implode(", ", $list), $msg);
-        $msg = str_replace("%3", $max_lv, $msg);
+        $msg = str_replace("%3", (string)$max_lv, $msg);
 
         return $msg;
     }
