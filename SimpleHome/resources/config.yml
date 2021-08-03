@@ -13,7 +13,7 @@ limit: -1
 # Messages:
 sethome-message: '§aHome %1 has been successfully set.'
 sethome-usage: '§cUsage: §7/sethome <home>'
-sethome-max: '§cHome %1 can be set. You have reached the maximum number of homes. You limit is %3'
+sethome-max: '§cHome %1 can be set. You have reached the maximum number of homes. You limit is %2'
 delhome-message: '§aHome %1 has been successfully deleted.'
 delhome-usage: '§cUsage: §7/delhome <home>'
 home-message: '§aYou are successfully teleported to home %1.'
