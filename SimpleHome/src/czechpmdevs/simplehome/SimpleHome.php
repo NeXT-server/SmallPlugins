@@ -90,9 +90,6 @@ class SimpleHome extends PluginBase implements Listener{
      */
     public function getDisplayHomeList(Player $player): string {
         $list = $this->getHomeList($player);
-        $lv = MoneyLevelAPI::getInstance()->getLv($player->getName());
-        $max_lv = $this->messages["limit"] + ($lv / 100);
-
         if(count($list) == 0) {
             return $this->messages["no-home"];
         }
@@ -122,7 +119,7 @@ class SimpleHome extends PluginBase implements Listener{
      */
     public function setPlayerHome(Player $player, Home $home) {
         $lv = MoneyLevelAPI::getInstance()->getLv($player->getName());
-        $max_lv = $this->messages["limit"] + ($lv / 100);
+        $max_lv = $this->messages["limit"] + (int)($lv / 100);
         if($max_lv != -1) {
             if(count($this->getHomeList($player)) > $max_lv) {
                 $msg = $this->messages["sethome-max"];
