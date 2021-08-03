@@ -125,15 +125,15 @@ class SimpleHome extends PluginBase implements Listener{
         $max_lv = $this->messages["limit"] + ($lv / 100);
         if($max_lv != -1) {
             if(count($this->getHomeList($player)) > $max_lv) {
-                $player->sendMessage(str_replace("%1", $home->getName(), $this->messages["sethome-max"]));
+                $msg = $this->messages["sethome-max"];
+                $msg = str_replace("%1", $home->getName(), $msg);
+                $msg = str_replace("%2", (string)$max_lv, $msg);
+                $player->sendMessage(str_replace("%1", $home->getName(), $msg);
                 return;
             }
         }
         if($player->getlevel()->getName() == $this->messages["ban-world"]){
-            $msg = $this->messages["ban-world-message"];
-            $msg = str_replace("%1", $home->getName(), $msg);
-            $msg = str_replace("%2", (string)$max_lv, $msg);
-            $player->sendMessage($msg);
+            $player->sendMessage($this->messages["ban-world-message"]));
             return;
         }
         $this->homes[$player->getName()][$home->getName()] = [$home->getX(), $home->getY(), $home->getZ(), $home->getLevel()->getName()];
