@@ -133,7 +133,7 @@ class SimpleHome extends PluginBase implements Listener{
             }
         }
         if($player->getlevel()->getName() == $this->messages["ban-world"]){
-            $player->sendMessage($this->messages["ban-world-message"]));
+            $player->sendMessage($this->messages["ban-world-message"]);
             return;
         }
         $this->homes[$player->getName()][$home->getName()] = [$home->getX(), $home->getY(), $home->getZ(), $home->getLevel()->getName()];
