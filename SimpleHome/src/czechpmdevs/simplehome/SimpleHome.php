@@ -128,7 +128,7 @@ class SimpleHome extends PluginBase implements Listener{
                 $msg = $this->messages["sethome-max"];
                 $msg = str_replace("%1", $home->getName(), $msg);
                 $msg = str_replace("%2", (string)$max_lv, $msg);
-                $player->sendMessage(str_replace("%1", $home->getName(), $msg);
+                $player->sendMessage(str_replace("%1", $home->getName(), $msg));
                 return;
             }
         }
