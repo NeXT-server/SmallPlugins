@@ -29,7 +29,7 @@ use pocketmine\utils\Config;
 use czechpmdevs\simplehome\commands\HomeCommand;
 use czechpmdevs\simplehome\commands\RemovehomeCommand;
 use czechpmdevs\simplehome\commands\SethomeCommand;
-use mydeacy\moneylevel\services\MoneyLevelAPI;
+use mydeacy\moneylevel\service\MoneyLevelAPI;
 
 /**
  * Class SimpleHome
