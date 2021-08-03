@@ -100,7 +100,6 @@ class SimpleHome extends PluginBase implements Listener{
         $msg = $this->messages["home-list"];
         $msg = str_replace("%1", (string)count($list), $msg);
         $msg = str_replace("%2", implode(", ", $list), $msg);
-        $msg = str_replace("%3", (string)$max_lv, $msg);
 
         return $msg;
     }
@@ -131,7 +130,10 @@ class SimpleHome extends PluginBase implements Listener{
             }
         }
         if($player->getlevel()->getName() == $this->messages["ban-world"]){
-            $player->sendMessage(str_replace("%1", $home->getName(), $this->messages["ban-world-message"]));
+            $msg = $this->messages["ban-world-message"];
+            $msg = str_replace("%1", $home->getName(), $msg);
+            $msg = str_replace("%2", (string)$max_lv, $msg);
+            $player->sendMessage($msg);
             return;
         }
         $this->homes[$player->getName()][$home->getName()] = [$home->getX(), $home->getY(), $home->getZ(), $home->getLevel()->getName()];
