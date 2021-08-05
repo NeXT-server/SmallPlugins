@@ -7,6 +7,17 @@ authors: [VixikCZ]
 description: Simple home plugin
 website: https://github.com/CzechPMDevs/SmallPlugins/SimpleHome
 
+commands:
+  home:
+    description: "home"
+    usage: "/home {home}"
+  sethome:
+    description: "set home"
+    usage: "/sethome {home}"
+  delhome:
+    description: "del home"
+    usage: "/delhome {home}"
+
 permissions:
   sh.limit:
     default: op
