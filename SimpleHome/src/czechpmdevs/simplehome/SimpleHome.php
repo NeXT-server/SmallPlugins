@@ -129,7 +129,7 @@ class SimpleHome extends PluginBase implements Listener{
                 return;
             }
         }
-        $ban_worlds = explode(",",this->messages["ban-world"]);
+        $ban_worlds = explode(",",$this->messages["ban-world"]);
         foreach($ban_worlds as $ban_world){
             if($player->getlevel()->getName() == $ban_world){
                 $player->sendMessage($this->messages["ban-world-message"]);
